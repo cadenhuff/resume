@@ -26,7 +26,9 @@ export function App(){
             <StyledBody>
             <Header />
             <Nav />
+            <Footer />
             </StyledBody>
+            
         </>
     );
 }
