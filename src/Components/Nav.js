@@ -30,12 +30,12 @@ export default function Nav(){
     return(
         <StyledNav>
             <StyledNavUl>
-                <StyledLi>Home</StyledLi>
-                <StyledLi>Education</StyledLi>
-                <StyledLi>Experience</StyledLi>
-                <StyledLi>Projects</StyledLi>
-                <StyledLi>Skills</StyledLi>
-                <StyledLi>Interests</StyledLi>
+                <StyledLi><a href = "/ ">Home</a></StyledLi>
+                <StyledLi><a href = "/education">Education</a></StyledLi>
+                <StyledLi><a href = "/experience">Experience</a></StyledLi>
+                <StyledLi><a href = "/projects">Projects</a></StyledLi>
+                <StyledLi><a href = "/skills">Skills</a></StyledLi>
+                <StyledLi><a href = "/interests">Interests</a></StyledLi>
             </StyledNavUl>
         </StyledNav>
     );
