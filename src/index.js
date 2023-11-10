@@ -7,9 +7,12 @@ import Education from "./Components/Mains/Education.js";
 import Skills from "./Components/Mains/Skills.js";
 import Work from "./Components/Mains/Work.js";
 import Projects from "./Components/Mains/Projects.js";
+import Experience from "./Components/Mains/Experience.js";
+import Interests from "./Components/Mains/Interests.js";
 import Nav from "./Components/Nav.js";
 import styled from "styled-components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 
 const StyledNavHeader = styled.div`
     display: flex;
@@ -25,6 +28,17 @@ const StyledBody = styled.body`
 `;
 
 const StyledNavMain = styled.div`
+    display: flex;
+    flex-direction: row;
+    position: relative;
+`;
+
+const StyledMain = styled.div`
+    display: flex;
+    flex-direction: column;
+    background-color: linen;
+    padding: 2vh 2vw;
+    flex: 70%;
 
 `;
 
@@ -33,19 +47,22 @@ export function App(){
     return(
         <>
             <StyledBody>
-            <Header />
-            <Nav />
-            <Routes>
-                <Route path = "/" element = {<Main />} />
-                <Route path = "/education" element = {<Education />} />
-                <Route path = "/skills" element = {<Skills />} />
-                <Route path = "/projects" element = {<Projects />} />
-                <Route path = "/work" element = {<Work />} />
-                <Route path = "/experience" element = {<Education />} />
-
-                
-            </Routes>
-            <Footer />
+                <Header />
+                <StyledNavMain>
+                    <Nav />
+                    <StyledMain>
+                    <Routes>
+                        <Route path = "" element = {<Main />} />
+                        <Route path = "education" element = {<Education />} />
+                        <Route path = "skills" element = {<Skills />} />
+                        <Route path = "projects" element = {<Projects />} />
+                        <Route path = "work" element = {<Work />} />
+                        <Route path = "experience" element = {<Experience />} />
+                        <Route path = "interests" element = {<Interests />} />
+                    </Routes>
+                    </StyledMain>
+                </StyledNavMain>
+                <Footer />
             </StyledBody>
             
         </>
