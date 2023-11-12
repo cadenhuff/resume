@@ -8,6 +8,9 @@ const StyledHeader = styled.header`
     padding: 1vh 1vw;
     font-size: calc(10px + 1vw);
 
+    @media screen and (max-width:700px){
+        text-align:center;
+    }
 `;
 
 const StyledHeaderTitle = styled.h1`
@@ -16,24 +19,34 @@ const StyledHeaderTitle = styled.h1`
     margin: auto;
     font-size: calc(1px + 3vw);
     color: cadetblue;
+    @media screen and (max-width:700px){
+        text-align:center;
+    }
 `;
 
 
 const StyledSubHeader = styled.div`
     display: flex;
     justify-content: space-between;
+    font-size: calc(2px + 1.75vw);
+    @media screen and (max-width:700px){
+        text-align:center;
+
+    }
 
 `;
 
 const StyledLoginButton = styled.button`
     background-color: cadetblue;
     color: white;
-    padding: 14px 20px;
+    padding: auto;
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 6%;
-
+    width: 10%;
+    text-align: center;
+    font-size: calc(2px + 1.25vw);
+    
     &:hover {
         opacity: 0.8;
       }

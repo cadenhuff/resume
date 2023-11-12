@@ -5,6 +5,8 @@ import { Link, useMatch, useResolvedPath, Outlet } from 'react-router-dom';
 
 const StyledNav = styled.nav`
     background-color: lightcoral;
+    flex:30%
+    flex-wrap:wrap; 
 `;
 
 const StyledNavUl = styled.ul`
@@ -14,6 +16,16 @@ const StyledNavUl = styled.ul`
     list-style: none;
     margin: auto;
     padding-left: 0;
+
+
+    @media screen and (max-width: 700px){
+        font-size:10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+
+    }
     
 `;
 
@@ -21,9 +33,16 @@ const StyledLi = styled.li`
 
     width:90%;
     padding: 1.5vh 0;
-    margin: 1vh auto;
-    font-size: calc(3px + 3vw);
+    margin: 1vh 1vw;
+    font-size: calc(1px + 2vw);
     background-color: blanchedalmond;
+
+    @media screen and (max-width:700px){
+        font-size: 10px;
+        
+        padding: .25% .5%;
+        margin: 1% .5%;
+    }
     
 
 `;
@@ -33,12 +52,13 @@ export default function Nav(){
     return(
         <StyledNav>
             <StyledNavUl>
-                <CustomLink to = "">Home</CustomLink>
-                <CustomLink to = "education">Education</CustomLink>
-                <CustomLink to = "experience">Experience</CustomLink>
-                <CustomLink to = "projects">Projects</CustomLink>
-                <CustomLink to = "skills">Skills</CustomLink>
-                <CustomLink to = "interests">Interests</CustomLink>
+                
+                <StyledLi><CustomLink to = "">Home</CustomLink></StyledLi>
+                <StyledLi><CustomLink to = "education">Education</CustomLink></StyledLi>
+                <StyledLi> <CustomLink to = "experience">Experience</CustomLink></StyledLi>
+                <StyledLi><CustomLink to = "projects">Projects</CustomLink></StyledLi>
+                <StyledLi><CustomLink to = "skills">Skills</CustomLink></StyledLi>
+                <StyledLi><CustomLink to = "interests">Interests</CustomLink></StyledLi>
             </StyledNavUl>
         </StyledNav>
     );
@@ -54,14 +74,14 @@ function CustomLink({ to, children }) {
     const linkStyles = {
         textDecoration: 'none',
         color: 'black',
-        fontSize: 'calc(2px + 3vw)',
-        padding: '3vw'
+        
         
         
     };
 
     return (
         <StyledLi className={isActive ? 'active' : ''}>
+
             <Link to={resolvePath.pathname} style={linkStyles}>
                 {children}
             </Link>

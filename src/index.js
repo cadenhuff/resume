@@ -31,6 +31,14 @@ const StyledNavMain = styled.div`
     display: flex;
     flex-direction: row;
     position: relative;
+
+    @media screen and (max-width:700px){
+
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+    }
 `;
 
 const StyledMain = styled.div`
@@ -39,6 +47,13 @@ const StyledMain = styled.div`
     background-color: linen;
     padding: 2vh 2vw;
     flex: 70%;
+
+    @media screen and (max-width: 700px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center; 
+    }    
 
 `;
 
@@ -52,6 +67,7 @@ export function App(){
                     <Nav />
                     <StyledMain>
                     <Routes>
+                        
                         <Route path = "" element = {<Main />} />
                         <Route path = "education" element = {<Education />} />
                         <Route path = "skills" element = {<Skills />} />

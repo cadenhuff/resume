@@ -9,6 +9,13 @@ const StyledContentImage = styled.div`
     flex-direction: row;
     display: flex; 
     padding: 1vh 2vw; 
+
+
+    @media screen and (max-width: 700px) {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
 `;
 
 
@@ -17,16 +24,21 @@ const StyledImage = styled.img`
     width: 35%;
     height: auto;
     margin-right:5% ;
+
+    @media screen and (max-width:700px){
+        margin: 1vh auto;
+    }
     
 
 `;
 
 
 
+
 export default function Main(){
     return(
         <main>
-            <h1 id = "main-title">Main</h1>
+            <h1>Main</h1>
             <StyledContentImage>
                 <StyledImage src = {profileImage} alt = "Picture of Me"></StyledImage>
                 
