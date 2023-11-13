@@ -3,7 +3,7 @@ import React from "react";
 
 
 
-export default function Interests({isLoggedIn}){
+export default function Interests(){
 
     return(
         <main>

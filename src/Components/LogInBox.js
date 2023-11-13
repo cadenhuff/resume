@@ -15,7 +15,7 @@ const StyledLogInBox = styled.div`
 
 `;
 
-export default function LoginBox({isLoggedIn, logInVisible, logIn, numOfTries}){
+export default function LogInBox({logInVisible, logIn, numOfTries}){
     const[password, setPassword] = useState('');
     const[username, setUsername] = useState('');
 

@@ -5,7 +5,7 @@ import Header from "./Components/Header.js";
 import Main from "./Components/Mains/Main.js";
 import Education from "./Components/Mains/Education.js";
 import Skills from "./Components/Mains/Skills.js";
-import Work from "./Components/Mains/Work.js";
+
 import Projects from "./Components/Mains/Projects.js";
 import Experience from "./Components/Mains/Experience.js";
 import Interests from "./Components/Mains/Interests.js";
@@ -63,7 +63,7 @@ export function App(){
     const[showLogIn, setShowLogIn] = useState(false);
     const[isLoggedIn, setIsLoggedIn] = useState(false);
     const[numOfTries, setNumOfTries] = useState(1);
-    console.log(isLoggedIn)
+    
     function toggleLogIn(){
         setShowLogIn(!showLogIn)
     };
@@ -97,13 +97,12 @@ export function App(){
                     <StyledMain>
                     <Routes>
                         
-                        <Route path = "" element = {<Main isLoggedIn = {isLoggedIn} logInVisible = {showLogIn} logIn = {logIn} numOfTries = {numOfTries}/>} />
-                        <Route path = "education" element = {<Education logInVisible = {showLogIn}/>} />
-                        <Route path = "skills" element = {<Skills/>} />
-                        <Route path = "projects" element = {<Projects logInVisible = {showLogIn}/>} />
-                        <Route path = "work" element = {<Work logInVisible = {showLogIn}/>} />
-                        <Route path = "experience" element = {<Experience logInVisible = {showLogIn}/>} />
+                        <Route path = "" element = {<Main logInVisible = {showLogIn} logIn = {logIn} numOfTries = {numOfTries}/>} />
+                        <Route path = "education" element = {<Education logInVisible = {showLogIn} logIn = {logIn} numOfTries = {numOfTries}/>} />
+                        <Route path = "projects" element = {<Projects logInVisible = {showLogIn} logIn = {logIn} numOfTries = {numOfTries}/>} />
+                        <Route path = "experience" element = {<Experience logInVisible = {showLogIn} logIn = {logIn} numOfTries = {numOfTries}/>} />
                         <Route path = "interests" element = {<Interests />} />
+                        <Route path = "skills" element = {<Skills/>} />
                     </Routes>
 
                     </StyledMain>

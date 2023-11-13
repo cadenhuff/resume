@@ -37,7 +37,7 @@ const StyledImage = styled.img`
 
 
 
-export default function Main({isLoggedIn, logInVisible, logIn, numOfTries}){
+export default function Main({logInVisible, logIn, numOfTries}){
     return(
         <main>
             <h1>Main</h1>
@@ -51,7 +51,7 @@ export default function Main({isLoggedIn, logInVisible, logIn, numOfTries}){
             <p>This is my website where you can find my education, work experience, and my projects</p>
             
             
-           <LogInBox isLoggedIn = {isLoggedIn} logInVisible={logInVisible} logIn = {logIn}  numOfTries = {numOfTries}/>
+           <LogInBox logInVisible={logInVisible} logIn = {logIn}  numOfTries = {numOfTries}/>
               
         </main>
 

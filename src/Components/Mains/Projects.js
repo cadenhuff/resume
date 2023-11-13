@@ -1,8 +1,8 @@
 import React, {useState} from "react";
+import LogInBox from "../LogInBox";
 
 
-
-export default function Projects(){
+export default function Projects({logInVisible, logIn, numOfTries}){
     return(
         <main>
             <h1 id = "main-title">Projects</h1>
@@ -23,6 +23,7 @@ export default function Projects(){
                 <li>Created a single-page application interface with Kivy. </li>
                 <li>Utilized Yelp API to obtain restaurant data and filtered data based on user input.</li>
             </ul>
+            <LogInBox logInVisible={logInVisible} logIn = {logIn}  numOfTries = {numOfTries}/>
         </main>
     );
 }

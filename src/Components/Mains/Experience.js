@@ -1,7 +1,7 @@
 import React from "react";
+import LogInBox from "../LogInBox";
 
-
-export default function Experience(){
+export default function Experience({logInVisible, logIn, numOfTries}){
 
     return(
         <main>          
@@ -21,6 +21,7 @@ export default function Experience(){
                     <li>Manage time effectively between students and deploy learning strategies to help each student reach their full potential.</li>
                     <li>Increase in GPA among all students; Growth in CERF French level (A1 to B2).</li>
                 </ul>
+                <LogInBox logInVisible={logInVisible} logIn = {logIn}  numOfTries = {numOfTries}/>
 
         </main>
     );
