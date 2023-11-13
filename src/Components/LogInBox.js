@@ -15,20 +15,42 @@ const StyledLogInBox = styled.div`
 
 `;
 
-export default function LoginBox({logInVisible}){
-    if (logInVisible){
-    return(
-        <StyledLogInBox>
-                   
-            <h2>LogIn</h2>
-            <input type="text" placeholder="Username" id="username"></input>
-            <input type="password" placeholder="Password" id="password"></input>
-            <button id="login-button-enter" onclick = "logIn()">Login</button>
-            <span id="close-button" class="close-button" onclick="closeLoginBox()">&times;</span>
-            <div id = 'num-of-tries'></div>
-        </StyledLogInBox>
+export default function LoginBox({isLoggedIn, logInVisible, logIn, numOfTries}){
+    const[password, setPassword] = useState('');
+    const[username, setUsername] = useState('');
+
     
-    );
+    function onLogInClick(){
+        logIn(username, password)
+    }
+
+
+    if (logInVisible){
+        return(
+            <StyledLogInBox>
+                    
+                <h2>LogIn</h2>
+                
+                <input
+                    type="username"
+                    
+                    placeholder="Username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                />
+                <input
+                    type="password"
+                    
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+                <button onClick = {onLogInClick}>Login</button>
+                <h3>{4 - numOfTries} Tries Remaining</h3>
+                
+            </StyledLogInBox>
+        
+        );
     
     }
     return(

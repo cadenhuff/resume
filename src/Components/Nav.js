@@ -48,20 +48,38 @@ const StyledLi = styled.li`
 `;
 
 
-export default function Nav(){
-    return(
-        <StyledNav>
+export default function Nav({isLoggedIn}){
+    if (isLoggedIn){
+        return(
+            <StyledNav>
+                <StyledNavUl>
+                    
+                    <StyledLi><CustomLink to = "">Home</CustomLink></StyledLi>
+                    <StyledLi><CustomLink to = "education">Education</CustomLink></StyledLi>
+                    <StyledLi> <CustomLink to = "experience">Experience</CustomLink></StyledLi>
+                    <StyledLi><CustomLink to = "projects">Projects</CustomLink></StyledLi>
+                    <StyledLi><CustomLink to = "skills">Skills</CustomLink></StyledLi>
+                    <StyledLi><CustomLink to = "interests">Interests</CustomLink></StyledLi>
+                </StyledNavUl>
+            </StyledNav>
+        );
+    }
+    else{
+        return(
+            <StyledNav>
+                
             <StyledNavUl>
                 
                 <StyledLi><CustomLink to = "">Home</CustomLink></StyledLi>
                 <StyledLi><CustomLink to = "education">Education</CustomLink></StyledLi>
                 <StyledLi> <CustomLink to = "experience">Experience</CustomLink></StyledLi>
                 <StyledLi><CustomLink to = "projects">Projects</CustomLink></StyledLi>
-                <StyledLi><CustomLink to = "skills">Skills</CustomLink></StyledLi>
-                <StyledLi><CustomLink to = "interests">Interests</CustomLink></StyledLi>
+
             </StyledNavUl>
         </StyledNav>
-    );
+            
+        );
+    }
 }
 
 

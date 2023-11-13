@@ -60,28 +60,46 @@ const StyledMain = styled.div`
 
 
 export function App(){
-    const[showLogIn, setShowLogIn] = useState(true)
-    const[isLoggedIn, setIsLoggedIn] = useState(false)
-
+    const[showLogIn, setShowLogIn] = useState(false);
+    const[isLoggedIn, setIsLoggedIn] = useState(false);
+    const[numOfTries, setNumOfTries] = useState(1);
+    console.log(isLoggedIn)
     function toggleLogIn(){
-        setShowLogIn(!showLogIn);
+        setShowLogIn(!showLogIn)
     };
+    function logIn(username, password){  
+        if(username === "" || password === ""){
+            alert("Please Enter Complete Username and Password")
+            return;
+        }    
+        if(checkCredentials(username,password)){
+            setShowLogIn(false);
+            setIsLoggedIn(true);
+        }
+        else{
+            setNumOfTries(numOfTries + 1)
+        }
+        if(numOfTries === 3){
+            window.close()
+        }
+    }
+    function checkCredentials(username, password){
+        return username === "caden" && password === "123" ; 
 
-    function LogIn(){
-        setIsLoggedIn(!isLoggedIn);
-    };
+        
+    }
     return(
         <>
             <StyledBody>
                 <Header onButtonClick = {toggleLogIn}/>
                 <StyledNavMain>
-                    <Nav />
+                    <Nav isLoggedIn = {isLoggedIn}/>
                     <StyledMain>
                     <Routes>
                         
-                        <Route path = "" element = {<Main logInVisible = {showLogIn}/>} />
+                        <Route path = "" element = {<Main isLoggedIn = {isLoggedIn} logInVisible = {showLogIn} logIn = {logIn} numOfTries = {numOfTries}/>} />
                         <Route path = "education" element = {<Education logInVisible = {showLogIn}/>} />
-                        <Route path = "skills" element = {<Skills />} />
+                        <Route path = "skills" element = {<Skills/>} />
                         <Route path = "projects" element = {<Projects logInVisible = {showLogIn}/>} />
                         <Route path = "work" element = {<Work logInVisible = {showLogIn}/>} />
                         <Route path = "experience" element = {<Experience logInVisible = {showLogIn}/>} />

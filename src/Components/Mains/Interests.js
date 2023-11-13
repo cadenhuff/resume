@@ -4,7 +4,7 @@ import React from "react";
 
 
 export default function Interests({isLoggedIn}){
-    if(isLoggedIn){
+
     return(
         <main>
             <p>In my free time I love to run and am currently training for my first marathon, the paris marathon! </p>
@@ -13,8 +13,5 @@ export default function Interests({isLoggedIn}){
 
         </main>
     );
-    }
-    return(
-        <></>
-    )
+
 }
