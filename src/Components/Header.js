@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from "react";
 import styled from 'styled-components';
 
 
@@ -54,15 +54,20 @@ const StyledLoginButton = styled.button`
 `;
 
 
-export default function Header(){
+export default function Header({onButtonClick}){
+
+    
+
     return(
         <StyledHeader>
             <StyledHeaderTitle>Caden Huffman</StyledHeaderTitle>
             <StyledSubHeader>
                 <p>Here is my updated resume as of October 2023.</p>
-                <StyledLoginButton onclick = "showLoginBox()">Login</StyledLoginButton> 
+                <StyledLoginButton onClick = {onButtonClick}>Login</StyledLoginButton> 
             </StyledSubHeader>
         </StyledHeader>
     );
 
 }
+
+

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import ReactDom from "react-dom";
 import Footer from "./Components/Footer.js";
 import Header from "./Components/Header.js";
@@ -12,6 +12,7 @@ import Interests from "./Components/Mains/Interests.js";
 import Nav from "./Components/Nav.js";
 import styled from "styled-components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 
 
 const StyledNavHeader = styled.div`
@@ -57,25 +58,36 @@ const StyledMain = styled.div`
 
 `;
 
+
 export function App(){
-    console.log(window.location)
+    const[showLogIn, setShowLogIn] = useState(true)
+    const[isLoggedIn, setIsLoggedIn] = useState(false)
+
+    function toggleLogIn(){
+        setShowLogIn(!showLogIn);
+    };
+
+    function LogIn(){
+        setIsLoggedIn(!isLoggedIn);
+    };
     return(
         <>
             <StyledBody>
-                <Header />
+                <Header onButtonClick = {toggleLogIn}/>
                 <StyledNavMain>
                     <Nav />
                     <StyledMain>
                     <Routes>
                         
-                        <Route path = "" element = {<Main />} />
-                        <Route path = "education" element = {<Education />} />
+                        <Route path = "" element = {<Main logInVisible = {showLogIn}/>} />
+                        <Route path = "education" element = {<Education logInVisible = {showLogIn}/>} />
                         <Route path = "skills" element = {<Skills />} />
-                        <Route path = "projects" element = {<Projects />} />
-                        <Route path = "work" element = {<Work />} />
-                        <Route path = "experience" element = {<Experience />} />
+                        <Route path = "projects" element = {<Projects logInVisible = {showLogIn}/>} />
+                        <Route path = "work" element = {<Work logInVisible = {showLogIn}/>} />
+                        <Route path = "experience" element = {<Experience logInVisible = {showLogIn}/>} />
                         <Route path = "interests" element = {<Interests />} />
                     </Routes>
+
                     </StyledMain>
                 </StyledNavMain>
                 <Footer />

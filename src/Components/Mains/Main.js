@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from "react";
 import styled from 'styled-components';
 import profileImage from "../../media/Me.jpeg";
+import LogInBox from '../LogInBox';
 //
 //For the different main pages, we could use conditional rendering or could also use props?
 //
@@ -35,7 +36,8 @@ const StyledImage = styled.img`
 
 
 
-export default function Main(){
+
+export default function Main({logInVisible}){
     return(
         <main>
             <h1>Main</h1>
@@ -47,8 +49,14 @@ export default function Main(){
                 </p>
             </StyledContentImage>
             <p>This is my website where you can find my education, work experience, and my projects</p>
+            
+            
+           <LogInBox logInVisible={logInVisible}/>
+              
         </main>
 
 
     );
 }
+
+
